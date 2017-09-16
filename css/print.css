@@ -1,0 +1,38 @@
+tr {
+	display:none;
+}
+#sum {
+	width: 100px;
+}
+caption {
+	text-decoration:underline;
+	padding-top:50px;	
+}
+#ordrdiv {
+	width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+table {
+	width:1100px;
+}
+.noprint {
+	display:none;
+}
+.unhide {
+	display:table-row;
+}
+#storeid {
+	width:70px;
+}
+.items {
+	width:50px;
+}
+.tot {
+	width:60px;
+}
+#po {
+	width:70px;
+}
+
+

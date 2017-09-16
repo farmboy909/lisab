@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Thank You</title>
+<script
+	src="https://code.jquery.com/jquery-3.1.0.min.js"
+	integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+	crossorigin="anonymous"></script>
+
+<script src="shim/js-webshim/minified/polyfiller.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href="css/screen.css" rel="stylesheet" type="text/css" media="screen">
+<style>
+h6 {
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+	color:#0091F5;
+	font-size:30px;
+	line-height:2;
+	text-align:justify;
+}
+h3 {
+	padding-left:50px;
+}
+@media print {
+	.noprint {
+		display:none;
+	}
+	table {
+		padding-left:10px;
+	}
+}
+	
+</style>
+<script language="Javascript" type="text/javascript">
+// <![CDATA[
+/*
+This script is written by Eric (Webcrawl@usa.net)
+For full source code, installation instructions,
+100's more DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+function printit(){  
+if (window.print) {
+    window.print() ;  
+} else {
+    var WebBrowser = '<OBJECT ID="WebBrowser1" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';
+document.body.insertAdjacentHTML('beforeEnd', WebBrowser);
+    WebBrowser1.ExecWB(6, 2);//Use a 1 vs. a 2 for a prompting dialog box    WebBrowser1.outerHTML = "";  
+}
+}
+// ]]>g-recaptcha-response
+</script>
+</head>
+<body>
+<!--<nav class="navbar navbar-default navbar-fixed-top noprint">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only noprint">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a style="font-family:Helvetica Neue, Arial, Helvetica, sans-serif; color:#0091F5;" class="navbar-brand LisaBOriginals" href="http://www.lisaboriginals.ca">Lisa B Originals</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a style="color:#0091F5;" href="http://www.lisaboriginals.ca/training.php">Training</a></li>
+			<li><a style="color:#0091F5;" href="http://www.lisaboriginals.ca/order.php">Dealer Order</a></li>
+            <li><a style="color:#0091F5;" href="http://www.lisaboriginals.ca/wrnt.php">Warranty Claim</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse
+      </div>
+    </nav>-->
+<center><h3>Lisa B Originals</h3></center>
+<p><h3>Here is the information you submitted:</h3></p>
+Name: $realName<br><br>
+
+Email: $email<br><br>
+
+Store ID: $storeid<br><br>
+
+<table width="1100" border="1">
+  <caption>
+   <p> Warranty Claim</p>
+  </caption>
+  <tr>
+    <th scope="col">Client</th>
+    <th scope="col">Sz</th>
+    <th scope="col">Sd</th>
+    <th scope="col">Stl</th>
+    <th scope="col">Clr</th>
+    <th scope="col">Inv#</th>
+    <th scope="col">PO#</th>
+  </tr>
+  <tr>
+    <td>$lcomment1</td>
+    <td>$size1</td>
+    <td>$side1</td>
+    <td>$style1</td>
+    <td>$colour1</td>
+    <td>$invNum1</td>
+    <td>$po1</td>
+  </tr>
+  <tr>
+    <td>$lcomment2</td>
+    <td>$size2</td>
+    <td>$side2</td>
+    <td>$style2</td>
+    <td>$colour2</td>
+    <td>$invNum2</td>
+    <td>$po2</td>
+  </tr>
+  <tr>
+    <td>$lcomment3</td>
+    <td>$size3</td>
+    <td>$side3</td>
+    <td>$style3</td>
+    <td>$colour3</td>
+    <td>$invNum3</td>
+    <td>$po3</td>
+  </tr>
+  <tr>
+    <td>$lcomment4</td>
+    <td>$size4</td>
+    <td>$side4</td>
+    <td>$style4</td>
+    <td>$colour4</td>
+    <td>$invNum4</td>
+    <td>$po4</td>
+  </tr>
+  <tr>
+    <td>$lcomment5</td>
+    <td>$size5</td>
+    <td>$side5</td>
+    <td>$style5</td>
+    <td>$colour5</td>
+    <td>$invNum5</td>
+    <td>$po5</td>
+  </tr>
+</table>
+<p><h3>Please keep this email for your records.  It can be printed.</h3></p>
+</script>
+</body>
+</html>

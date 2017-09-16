@@ -1,0 +1,849 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Warranty Claim</title>
+<script
+	src="https://code.jquery.com/jquery-3.1.0.min.js"
+	integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="/uploadify/jquery.uploadify-3.1.min.js"></script>
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+<style>
+/*from order*/
+#LisaBOriginals {
+	color:#0091F5;
+}
+.price {
+	width:50px;
+}
+#totalPrice {
+	width:90px;
+}
+#numItems {
+	width:40px;
+}
+.pg {
+	width:50px;
+}
+#colourLegend {
+	border-style:solid;
+	border-color:#0091F5;
+	text-align:center;
+	width:825px;
+	margin: 0px auto 25px auto;
+}
+alert {
+	color:0091F5;
+	background-color:#FFC;
+	text-decoration:underline;
+	font-weight:bold;
+}
+.stock {
+	width:20px;
+}
+.items {
+	width:40px;
+}
+.tot {
+	width:70px;
+}
+#space {
+	style="min-height:50px;
+}
+#storeid {
+	width:60px;
+}
+
+		.line {
+			width:30px;
+			font-weight:bold;
+		}
+		.lncomment {
+			size:30px;
+		}
+/*from order end*/
+#upload {
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	text-align:center;
+}
+#form {
+	text-align:center;
+	width:1200px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.lncomment{
+	width:250px;
+	height:100px;
+	margin-left:0px;
+}
+#sub {
+	margin-top:30px;
+}
+h1 {
+	text-decoration:underline;
+	padding-bottom:30px;
+}
+.invNum {
+	width:70px;
+}
+.po {
+	width:70px;
+}
+</style>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top noprint">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only noprint">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="LisaBOriginals" style="font-family:Helvetica Neue, Arial, Helvetica, sans-serif" class="navbar-brand noprint" href="http://www.lisaboriginals.ca">Lisa B Originals</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ><a id="LisaBOriginals" class="noprint" href="http://www.lisaboriginals.ca/training.php">Training</a></li>
+            <li><a id="LisaBOriginals" class="noprint" href="http://www.lisaboriginals.ca/order.php">Order</a></li>
+            <li class="active"><a id="LisaBOriginals" class="noprint" href="http://www.lisaboriginals.ca/warranty.php">Warranty</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="LisaBOriginals" href="#"><span class="glyphicon glyphicon-user noprint"></span>&nbsp; <?php echo $userRow['user_name']; ?></a></li>
+            <li><a id="LisaBOriginals" href="../register/logout.php?logout"><span class="glyphicon glyphicon-log-out noprint"></span>&nbsp; Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<center><img class="noprint" src="images/logo.png" style="margin-top:70px" alt="logo"></center>
+<div id="form">
+<form>
+    
+  <label for="realName">Name: </label>
+  <input name="realName" id="realName" type="text" required>&nbsp;&nbsp;
+         
+  <label for="email">email: </label>
+  <input name="email" id="email" type="email" value="<?php echo $userRow[user_email];?>" required>&nbsp;&nbsp;
+         
+  <label for="storeIDe">Store ID: </label>
+  <input name="storeID" id="storeid" type="text" value='<?php echo $userRow[dealer];?>' readonly required><br>
+    Images of the sales invoice and the product can be sent by email to <span style="color:#F00">salesorder@lisaboriginals.ca</span>
+    
+    <br>
+    <h1>Warranty Claim</h1>
+   <!--row 1-->
+    
+      <label for="size1">Size:</label>
+      <select name="size1" size="1" class="size" id="size1" required>
+        <option ></option>										
+        <option value="2">2</option>							
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+      </select>
+      
+      <label>Side:</label>
+      <select name="side1" id="side1" required>
+        <option ></option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+    </select>
+      
+      <label>Style:</label>
+      <select name="style1" id="style1" required>
+        <option ></option>
+        <option value="full">Full</option>
+        <option value="slight">Slight</option>
+    </select>
+      
+      <label>Colour:</label>
+      <select name="colour1" id="colour1" required>
+        <option></option>
+        <option id="heidi1" value="heidi">01-Heidi</option>
+        <option value="carol">02-Carol</option>
+        <option id="pam1" value="pam">03-Pam</option>
+        <option value="molly">04-Molly</option>
+        <option value="sasha">05-Sasha</option>
+    </select>
+    
+    <label>In Stock: </label><input name="stock1" type="text" id="stock1" readonly class="stock">
+    
+        <label>Sales Invoice Number:</label>
+    <input name="invNum1" class="invNum" type="text" required>
+    
+    <label for="po1">Purchase Order Number: </label><input name="po1" id="po1" class="po" type="text" placeholder="Required*" required>
+    
+    <br>
+        
+    <!--row 2-->
+    
+    <label for="size2">Size:</label>
+    <select name="size2" size="1" class="size" id="size2" required>
+        <option ></option>										
+        <option value="2">2</option>							
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+      </select>
+      
+      <label>Side:</label>
+    <select name="side2" id="side2" required>
+        <option ></option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        </select>
+      
+      <label>Style:</label>
+    <select name="style2" id="style2" required>
+        <option ></option>
+        <option value="full">Full</option>
+        <option value="slight">Slight</option>
+        </select>
+      
+      <label>Colour:</label>
+    <select name="colour2" id="colour2" required>
+        <option></option>
+        <option id="heidi1" value="heidi">01-Heidi</option>
+        <option value="carol">02-Carol</option>
+        <option id="pam1" value="pam">03-Pam</option>
+        <option value="molly">04-Molly</option>
+        <option value="sasha">05-Sasha</option>
+        </select>
+        
+        <label>In Stock: </label><input name="stock2" type="text" id="stock2" readonly class="stock">
+        
+    
+        <label>Sales Invoice Number:</label>
+    <input name="invNum2" id="invNum2" class="invNum" type="text" required>
+    
+    <label for="po2">Purchase Order Number: </label><input name="po2" id="po2" class="po" type="text" placeholder="Required*" required>
+    <br>
+    <!--row 2-->
+    
+      <label for="size3">Size:</label>
+    <select name="size3" size="1" class="size" id="size3" required>
+        <option ></option>										
+        <option value="2">2</option>							
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+      </select>
+      
+      <label>Side:</label>
+    <select name="side3" id="side3" required>
+        <option ></option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        </select>
+      
+      <label>Style:</label>
+    <select name="style3" id="style3" required>
+        <option ></option>
+        <option value="full">Full</option>
+        <option value="slight">Slight</option>
+        </select>
+      
+      <label>Colour:</label>
+    <select name="colour3" id="colour3" required>
+        <option></option>
+        <option id="heidi1" value="heidi">01-Heidi</option>
+        <option value="carol">02-Carol</option>
+        <option id="pam1" value="pam">03-Pam</option>
+        <option value="molly">04-Molly</option>
+        <option value="sasha">05-Sasha</option>
+        </select>
+        
+        <label>In Stock: </label><input name="stock3" type="text" id="stock3" readonly class="stock">
+        
+    
+        <label>Sales Invoice Number:</label>
+    <input name="invNum3" id="invNum3" class="invNum" type="text" required>
+    
+    <label for="po3">Purchase Order Number: </label><input name="po3" id="po3" class="po" type="text" placeholder="Required*" required>
+    
+    <br> 
+    
+    <!--row 4-->
+    
+      <label for="size4">Size:</label>
+    <select name="size4" size="1" class="size" id="size4" required>
+        <option ></option>										
+        <option value="2">2</option>							
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+    </select>
+      
+      <label>Side:</label>
+    <select name="side4" id="side4" required>
+        <option ></option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+    </select>
+      
+      <label>Style:</label>
+    <select name="style4" id="style4" required>
+        <option ></option>
+        <option value="full">Full</option>
+        <option value="slight">Slight</option>
+    </select>
+      
+      <label>Colour:</label>
+    <select name="colour4" id="colour4" required>
+        <option></option>
+        <option id="heidi1" value="heidi">01-Heidi</option>
+        <option value="carol">02-Carol</option>
+        <option id="pam1" value="pam">03-Pam</option>
+        <option value="molly">04-Molly</option>
+        <option value="sasha">05-Sasha</option>
+    </select>
+    
+    <label>In Stock: </label><input name="stock4" type="text" id="stock4" readonly class="stock">
+    
+    
+        <label>Sales Invoice Number:</label>
+    <input name="invNum4" id="invNum4" class="invNum" type="text" required>
+    
+    <label for="po4">Purchase Order Number: </label><input name="po4" id="po4" class="po" type="text" placeholder="Required*" required>
+    
+    <br> 
+    
+     <!--row 5-->
+    
+      <label for="size5">Size:</label>
+    <select name="size5" size="1" class="size" id="size5" required>
+        <option ></option>										
+        <option value="2">2</option>							
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+    </select>
+      
+      <label>Side:</label>
+    <select name="side5" id="side5" required>
+        <option ></option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+    </select>
+      
+      <label>Style:</label>
+    <select name="style5" id="style5" required>
+        <option ></option>
+        <option value="full">Full</option>
+        <option value="slight">Slight</option>
+    </select>
+      
+      <label>Colour:</label>
+    <select name="colour5" id="colour5" required>
+        <option></option>
+        <option id="heidi1" value="heidi">01-Heidi</option>
+        <option value="carol">02-Carol</option>
+        <option id="pam1" value="pam">03-Pam</option>
+        <option value="molly">04-Molly</option>
+        <option value="sasha">05-Sasha</option>
+    </select>
+    
+    <label>In Stock: </label><input name="stock5" type="text" id="stock5" readonly class="stock">
+    
+    
+        <label>Sales Invoice Number:</label>
+    <input name="invNum5" id="invNum5" class="invNum" type="text" required>
+    
+    <label for="po5">Purchase Order Number: </label><input name="po5" id="po5" class="po" type="text" placeholder="Required*" required>
+    <br>  
+        
+    <input name="sub" id="sub" type="submit" value="Submit to Lisa B">
+  </form>
+        </div><!--end form-->
+<script>
+function stockCnt(size, side, style, stock) {												//size, side, style are self explanitory. Stock is the box to change.  All are dependant on order line number.
+var e = document.getElementById(size);
+var sel_size = e.options[e.selectedIndex].value;											//selected size 
+switch (parseInt(sel_size)) {
+    case 2:
+			var e = document.getElementById(side);											//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full, count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant1").value;
+				current.value = number;
+			}//end if format
+				if(format == "slight") {													//if left slight, - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant2").value;
+				current.value = number;
+			};//end if format
+		};//end if lateral
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant3").value;
+				current.value = number;
+			}//end if format
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant4").value;
+				current.value = number;
+			};//end if format
+		};//end if lateral
+
+		break;
+    case 3:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant6").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant5").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant8").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant7").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 4:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant10").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant9").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant12").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+
+				var number =  document.getElementById("quant11").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 5:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant14").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant13").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant16").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant15").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 6:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant18").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant17").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant20").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant19").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 7:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant22").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant21").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant24").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant23").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 8:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant26").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant25").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant28").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant27").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 9:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant30").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant29").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant32").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant31").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 10:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant34").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant33").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant36").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant35").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 11:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant38").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant37").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant40").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant39").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 12:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant42").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant41").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant44").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant43").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 13:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant46").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant45").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant48").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant47").value;
+				current.value = number;
+			};
+		};
+
+        break;
+    case 14:
+        var e = document.getElementById(side);												//get id for side
+			var lateral = e.options[e.selectedIndex].value;									//get selected side value
+			var e = document.getElementById(style);											//get id for style
+			var format = e.options[e.selectedIndex].value;									//get selected style value
+			
+		if(lateral == "left") {																//if "left" full count is this
+			if(format == "full") {
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant50").value;
+				current.value = number;
+			}
+				if(format == "slight") {													//if left slight - count is this
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant49").value;
+				current.value = number;
+			};
+		};
+		if(lateral == "right") {			
+			if(format =="full") {															//if right full
+				var current = document.getElementById(stock);
+				var number =  document.getElementById("quant52").value;
+				current.value = number;
+			}
+			if(format == "slight") {
+				var current = document.getElementById(stock);								//if right slight
+				var number =  document.getElementById("quant51").value;
+				current.value = number;
+			};//end if lateral
+			};//end if format
+			};//end switch
+		};//end stockCnt()
+		
+		function customStock(x, y, z) {												//x = pam?  y = lookuptable quantity  z = where value should appear
+	var pick = document.getElementById(x).selected;			 
+	if(pick == true) {
+		var stkbox = document.getElementById(y);									//get quantity in stock
+		z.value = stkbox.value;													
+	}else{
+		z.value = 0;																//if colour is not pam? stock will be zero
+	}
+};
+
+</script>
+
+</body>
+</html>

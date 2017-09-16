@@ -1,0 +1,54 @@
+tr {
+	display:none;
+}
+#sum {
+	width: 100px;
+}
+
+caption {
+	text-decoration:underline;
+	padding-top:50px;	
+}
+#ordrdiv {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+input[type="number"] {
+   width:38px;
+}
+table {
+	width: 100%;
+	/* [disabled]table-layout: fixed; */
+	/*background: #9FC;               */
+}
+.unhide {
+	display:table-row;
+}
+#storeid {
+	width:70px;
+}
+#po {
+	width:70px;
+}
+.items {
+	width:30px;
+}
+.tot {
+	width:40px;
+}
+.price {
+	width:40px;
+}
+#numItems {
+	width:30px;
+	background:#FFC;
+	color:#000;
+	font-weight:bolder;
+}
+#totalPrice {
+	width:40px;
+	background:#FFC;
+	color:#000;
+	font-weight:bolder;
+}

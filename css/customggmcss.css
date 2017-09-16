@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.item{
+    background: #F00;   
+    text-align: center;
+    height: 300px !important;
+}
+.carousel{
+    margin-top: 20px;h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+
+.carousel{
+    margin-top: 20px;
+}
+.bs-example{
+	margin: 0px;
+}
+#vid {
+	margin-left:auto;
+	margin-right:auto;
+}
+#mycarousel {
+	margin-bottom:50px;
+	padding:0px;
+	margin-left:0px;
+}
+.navbar {
+	GradientType=0;
+}
+#container13 {
+	background: #e3e3e3;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+.navbar navbar-default navbar-static-top {
+	background-color:#FF0;
+
+
+	

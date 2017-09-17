@@ -92,6 +92,25 @@ $('.items').keyup(function () { 						//0nly integers in items
     this.value = this.value.replace(/[^0-9\.]/g,'');
 });
 	});
+	
+function notShow(size, style) {	
+	var e = document.getElementById(size);
+	var selected = e.options[e.selectedIndex].value;			//disable "styles" for size 2
+		if(selected == 2){
+			var choice2 = document.getElementById(style).options[2].disabled = true;
+			var choice3 = document.getElementById(style).options[3].disabled = true;
+		alert ("Only regular style is available for this size");
+};
+};
+
+function largeSlight(size, style) {	
+	var e = document.getElementById(size);
+	var selected = e.options[e.selectedIndex].value;	 	//disable "slight" for size 11 >
+		if(selected >= 11){
+		var choice2 = document.getElementById(style).options[2].disabled = true;
+	alert ("Slight style is not available for this size");
+};
+};
 </script>
 
 

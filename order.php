@@ -318,7 +318,7 @@ alert {
   <tr style="display:table-row">
   <td colspan="10" class="noprint">
   <div id="colourLegend" class="noprint">
-	Colours: &nbsp;<span>LBO-1</span>&nbsp; Ivory,&nbsp;&nbsp;<span>LBO-2</span>&nbsp; Cream,&nbsp;&nbsp;<span>LBO-3</span>&nbsp; Beige,&nbsp;&nbsp;<span>LBO-4</span>&nbsp; Tan,&nbsp;&nbsp;<span>LBO-5</span>&nbsp; Coffee
+	<span style="color:#0091FE">Colours: </span>&nbsp;<span>LBO-1</span>&nbsp; Ivory,&nbsp;&nbsp;<span>LBO-2</span>&nbsp; Cream,&nbsp;&nbsp;<span>LBO-3</span>&nbsp; Beige,&nbsp;&nbsp;<span>LBO-4</span>&nbsp; Tan,&nbsp;&nbsp;<span>LBO-5</span>&nbsp; Coffee
 </div><!--end color-->
 <p class="noprint" style="text-align:center"> The stock colour is <span style="font-weight:bold">LBO-3</span>, any other colours available will be considered Special Order, and will be subject to a $25 charge.</p>
   </td>
@@ -330,7 +330,7 @@ alert {
   </td>
   </tr>
   
-  <tr style="display:table-row"><!--FIRST row-->
+   <tr style="display:table-row"><!--FIRST row-->
   <td><input name="line1" id="line1" class="line" type="text" value="1:" readonly>&nbsp;&nbsp;</td>
   <td>
    <label for="lcomment1">Client:</label>
@@ -338,7 +338,7 @@ alert {
   	</td>
     <td><label>Size</label>
   <select name="size1" class="size" id="size1" title="Please select a size." required onChange="price(('size1'), ('boxa1')); stockCnt(('size1'), ('side1'), ('style1'), ('stock1')); customStock(('pam1'), ('stock1'), ('boxb1'));
-    priceAddtn(('colour1'), ('boxa1')); calculate(('boxa1'), ('boxb1'), ('ltotal1')); setTimeout(calculateSum, 30);"><!-- customStock(('pam1'), ('stock1'), ('boxb1'));-->
+    notShow(('size1'), ('style1')); largeSlight(('size1'), ('style1')); priceAddtn(('colour1'), ('boxa1')); calculate(('boxa1'), ('boxb1'), ('ltotal1')); setTimeout(calculateSum, 30);"><!-- customStock(('pam1'), ('stock1'), ('boxb1'));-->
      <option value=" "></option>
     <option value="2">2</option>							
     <option value="3">3</option>
@@ -366,8 +366,8 @@ alert {
              <select name="style1" id="style1" required onChange="customStock(('pam1'), ('stock1'), ('boxb1')); stockCnt(('size1'), ('side1'), ('style1'), ('stock1'));"><!--customStock(('pam1'), ('stock1'), ('boxb1')); -->
               <option ></option>
               <option value="full">Regular</option>
-              <option value="slight">Slight</option>
-              <option value="enh">Enhancer</option>
+              <option id="notA" class="not" value="slight">Slight</option>
+              <option class="not" value="enh">Enhancer</option>
             </select>&nbsp;</td>
             
     <td><label>Colour</label>
@@ -396,7 +396,7 @@ alert {
   	</td>
      <td><label>Size</label><!--2 row-->
   <select name="size2" class="size" id="size2" title="Please select a size." required onChange="price(('size2'), ('boxa2')); stockCnt(('size2'), ('side2'), ('style2'), ('stock2'));  customStock(('pam2'), ('stock2'), ('boxb2'));
-    priceAddtn(('colour2'), ('boxa2')); calculate(('boxa2'), ('boxb2'), ('ltotal2')); setTimeout(calculateSum, 30);"><!-- customStock(('pam2'), ('stock2'), ('boxb2'));-->
+    notShow(('size2'), ('style2')); largeSlight(('size2'), ('style2')); priceAddtn(('colour2'), ('boxa2')); calculate(('boxa2'), ('boxb2'), ('ltotal2')); setTimeout(calculateSum, 30);"><!-- customStock(('pam2'), ('stock2'), ('boxb2'));-->
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -451,7 +451,7 @@ alert {
   	</td>
      <td><label>Size</label><!--3 row-->
   <select name="size3" class="size" id="size3" title="Please select a size." required onChange="price(('size3'), ('boxa3')); stockCnt(('size3'), ('side3'), ('style3'), ('stock3')); customStock(('pam3'), ('stock3'), ('boxb3'));
-   priceAddtn(('colour3'), ('boxa3')); calculate(('boxa3'), ('boxb3'), ('ltotal3')); setTimeout(calculateSum, 30);"><!--; customStock(('pam3'), ('stock3'), ('boxb3'));-->
+   notShow(('size3'), ('style3')); largeSlight(('size3'), ('style3')); priceAddtn(('colour3'), ('boxa3')); calculate(('boxa3'), ('boxb3'), ('ltotal3')); setTimeout(calculateSum, 30);"><!--; customStock(('pam3'), ('stock3'), ('boxb3'));-->
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -476,7 +476,7 @@ alert {
     <td><label>Style</label>
              <select name="style3" id="style3" required onChange="customStock(('pam3'), ('stock3'), ('boxb3')); stockCnt(('size3'), ('side3'), ('style3'), ('stock3'));"><!--customStock(('pam3'), ('stock3'), ('boxb3'));-->
              <option ></option>
-              <option value="full">Regular</option>
+              <option value="full" >Regular</option>
               <option value="slight">Slight</option>
               <option value="enh">Enhancer</option>
             </select></td>
@@ -505,7 +505,7 @@ alert {
   	</td>
      <td><label>Size</label><!--4 row-->
   <select name="size4" class="size" id="size4" title="Please select a size." required onChange="price(('size4'), ('boxa4')); stockCnt(('size4'), ('side4'), ('style4'), ('stock4')); customStock(('pam4'), ('stock4'), ('boxb4'));
-   priceAddtn(('colour4'), ('boxa4')); calculate(('boxa4'), ('boxb4'), ('ltotal4')); setTimeout(calculateSum, 30);"><!-- customStock(('pam4'), ('stock4'), ('boxb4'));-->
+   notShow(('size4'), ('style4')); largeSlight(('size4'), ('style4')); priceAddtn(('colour4'), ('boxa4')); calculate(('boxa4'), ('boxb4'), ('ltotal4')); setTimeout(calculateSum, 30);"><!-- customStock(('pam4'), ('stock4'), ('boxb4'));-->
      <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -560,7 +560,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 5-->
   <select name="size5" class="size" id="size5" required onChange="price(('size5'), ('boxa5')); stockCnt(('size5'), ('side5'), ('style5'), ('stock5')); customStock(('pam5'), ('stock5'), ('boxb5')); 
-   priceAddtn(('colour5'), ('boxa5')); calculate(('boxa5'), ('boxb5'), ('ltotal5')); setTimeout(calculateSum, 30);">
+   notShow(('size5'), ('style5')); largeSlight(('size5'), ('style5')); priceAddtn(('colour5'), ('boxa5')); calculate(('boxa5'), ('boxb5'), ('ltotal5')); setTimeout(calculateSum, 30);">
      <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -616,7 +616,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 6-->
   <select name="size6" class="size" id="size6" required onChange="price(('size6'), ('boxa6')); stockCnt(('size6'), ('side6'), ('style6'), ('stock6')); customStock(('pam6'), ('stock6'), ('boxb6')); 
-   priceAddtn(('colour6'), ('boxa6')); calculate(('boxa6'), ('boxb6'), ('ltotal6')); setTimeout(calculateSum, 30);">
+   notShow(('size6'), ('style6')); largeSlight(('size6'), ('style6')); priceAddtn(('colour6'), ('boxa6')); calculate(('boxa6'), ('boxb6'), ('ltotal6')); setTimeout(calculateSum, 30);">
      <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -671,7 +671,7 @@ alert {
   	</td>
      <td><label>Size</label><!--7 row-->
   <select name="size7" class="size" id="size7" required onChange="price(('size7'), ('boxa7')); stockCnt(('size7'), ('side7'), ('style7'), ('stock7')); customStock(('pam7'), ('stock7'), ('boxb7')); 
-  priceAddtn(('colour7'), ('boxa7')); calculate(('boxa7'), ('boxb7'), ('ltotal7')); setTimeout(calculateSum, 30);">
+  notShow(('size7'), ('style7')); largeSlight(('size7'), ('style7')); priceAddtn(('colour7'), ('boxa7')); calculate(('boxa7'), ('boxb7'), ('ltotal7')); setTimeout(calculateSum, 30);">
      <option></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -726,7 +726,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 8-->
   <select name="size8" class="size" id="size8" required onChange="price(('size8'), ('boxa8')); stockCnt(('size8'), ('side8'), ('style8'), ('stock8')); customStock(('pam8'), ('stock8'), ('boxb8')); 
-    priceAddtn(('colour7'), ('boxa7')); calculate(('boxa8'), ('boxb8'), ('ltotal8')); setTimeout(calculateSum, 30);">
+    notShow(('size8'), ('style8')); largeSlight(('size8'), ('style8')); priceAddtn(('colour7'), ('boxa7')); calculate(('boxa8'), ('boxb8'), ('ltotal8')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -781,7 +781,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 9-->
   <select name="size9" class="size" id="size9" required onChange="price(('size9'), ('boxa9')); stockCnt(('size9'), ('side9'), ('style9'), ('stock9')); customStock(('pam9'), ('stock9'), ('boxb9')); 
-    priceAddtn(('colour8'), ('boxa8')); calculate(('boxa9'), ('boxb9'), ('ltotal9')); setTimeout(calculateSum, 30);">
+    notShow(('size9'), ('style9')); largeSlight(('size9'), ('style9')); priceAddtn(('colour8'), ('boxa8')); calculate(('boxa9'), ('boxb9'), ('ltotal9')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -836,7 +836,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 10-->
   <select name="size10" id="size10" class="size" required onChange="price(('size10'), ('boxa10')); stockCnt(('size10'), ('side10'), ('style10'), ('stock10')); customStock(('pam10'), ('stock10'), ('boxb10')); 
-   priceAddtn(('colour10'), ('boxa10')); calculate(('boxa10'), ('boxb10'), ('ltotal10')); setTimeout(calculateSum, 30);">
+   notShow(('size10'), ('style10')); largeSlight(('size10'), ('style10')); priceAddtn(('colour10'), ('boxa10')); calculate(('boxa10'), ('boxb10'), ('ltotal10')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -891,7 +891,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 11-->
   <select name="size11" class="size" id="size11" required onChange="price(('size11'), ('boxa11')); stockCnt(('size11'), ('side11'), ('style11'), ('stock11')); customStock(('pam11'), ('stock11'), ('boxb11')); 
-   priceAddtn(('colour11'), ('boxa11')); calculate(('boxa11'), ('boxb11'), ('ltotal11')); setTimeout(calculateSum, 30);">
+   notShow(('size11'), ('style11')); largeSlight(('size11'), ('style11')); priceAddtn(('colour11'), ('boxa11')); calculate(('boxa11'), ('boxb11'), ('ltotal11')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -946,7 +946,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 12-->
   <select name="size12" class="size" id="size12" required onChange="price(('size12'), ('boxa12')); stockCnt(('size12'), ('side12'), ('style12'), ('stock12')); customStock(('pam12'), ('stock12'), ('boxb12')); 
-    priceAddtn(('colour12'), ('boxa12')); calculate(('boxa12'), ('boxb12'), ('ltotal12')); setTimeout(calculateSum, 30);">
+    notShow(('size12'), ('style12')); largeSlight(('size12'), ('style12')); priceAddtn(('colour12'), ('boxa12')); calculate(('boxa12'), ('boxb12'), ('ltotal12')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1001,7 +1001,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 13-->
   <select name="size13" class="size" id="size13" required onChange="price(('size13'), ('boxa13')); stockCnt(('size13'), ('side13'), ('style13'), ('stock13')); customStock(('pam13'), ('stock13'), ('boxb13')); 
-  priceAddtn(('colour13'), ('boxa13')); calculate(('boxa13'), ('boxb13'), ('ltotal13')); setTimeout(calculateSum, 30);">
+  notShow(('size13'), ('style13')); largeSlight(('size13'), ('style13')); priceAddtn(('colour13'), ('boxa13')); calculate(('boxa13'), ('boxb13'), ('ltotal13')); setTimeout(calculateSum, 30);">
   <option></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1056,7 +1056,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 14-->
   <select name="size14" class="size" id="size14" required onChange="price(('size14'), ('boxa14')); stockCnt(('size14'), ('side14'), ('style14'), ('stock14')); customStock(('pam14'), ('stock14'), ('boxb14')); 
-   priceAddtn(('colour14'), ('boxa14')); calculate(('boxa14'), ('boxb14'), ('ltotal14')); setTimeout(calculateSum, 30);">
+   notShow(('size14'), ('style14')); largeSlight(('size14'), ('style14')); priceAddtn(('colour14'), ('boxa14')); calculate(('boxa14'), ('boxb14'), ('ltotal14')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1111,7 +1111,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 15-->
   <select name="size15" class="size" id="size15" required onChange="price(('size15'), ('boxa15')); stockCnt(('size15'), ('side15'), ('style15'), ('stock15')); customStock(('pam15'), ('stock15'), ('boxb15')); 
-    priceAddtn(('colour15'), ('boxa15')); calculate(('boxa15'), ('boxb15'), ('ltotal15')); setTimeout(calculateSum, 30);">
+    notShow(('size15'), ('style15')); largeSlight(('size15'), ('style15')); priceAddtn(('colour15'), ('boxa15')); calculate(('boxa15'), ('boxb15'), ('ltotal15')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1166,7 +1166,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 16-->
   <select name="size16" class="size" id="size16" required onChange="price(('size16'), ('boxa16')); stockCnt(('size16'), ('side16'), ('style16'), ('stock16')); customStock(('pam16'), ('stock16'), ('boxb16')); 
-    priceAddtn(('colour16'), ('boxa16')); calculate(('boxa16'), ('boxb16'), ('ltotal16')); setTimeout(calculateSum, 30);">
+    notShow(('size16'), ('style16')); largeSlight(('size16'), ('style16')); priceAddtn(('colour16'), ('boxa16')); calculate(('boxa16'), ('boxb16'), ('ltotal16')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1221,7 +1221,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 17-->
   <select name="size17" class="size" id="size17" required onChange="price(('size17'), ('boxa17')); stockCnt(('size17'), ('side17'), ('style17'), ('stock17')); customStock(('pam17'), ('stock17'), ('boxb17')); 
-    priceAddtn(('colour17'), ('boxa17')); calculate(('boxa17'), ('boxb17'), ('ltotal17')); setTimeout(calculateSum, 30);">
+    notShow(('size17'), ('style17')); largeSlight(('size17'), ('style17')); priceAddtn(('colour17'), ('boxa17')); calculate(('boxa17'), ('boxb17'), ('ltotal17')); setTimeout(calculateSum, 30);">
  <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1276,7 +1276,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 18-->
   <select name="size18" class="size" id="size18" required onChange="price(('size18'), ('boxa18')); stockCnt(('size18'), ('side18'), ('style18'), ('stock18')); customStock(('pam18'), ('stock18'), ('boxb18')); 
-    priceAddtn(('colour18'), ('boxa18')); calculate(('boxa18'), ('boxb18'), ('ltotal18')); setTimeout(calculateSum, 30);">
+    notShow(('size18'), ('style18')); largeSlight(('size18'), ('style18')); priceAddtn(('colour18'), ('boxa18')); calculate(('boxa18'), ('boxb18'), ('ltotal18')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1331,7 +1331,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 19-->
   <select name="size19" class="size" id="size19" required onChange="price(('size19'), ('boxa19')); stockCnt(('size19'), ('side19'), ('style19'), ('stock19')); customStock(('pam19'), ('stock19'), ('boxb19')); 
-    priceAddtn(('colour19'), ('boxa19')); calculate(('boxa19'), ('boxb19'), ('ltotal19')); setTimeout(calculateSum, 30);">
+    notShow(('size19'), ('style19')); largeSlight(('size19'), ('style19')); priceAddtn(('colour19'), ('boxa19')); calculate(('boxa19'), ('boxb19'), ('ltotal19')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -1386,7 +1386,7 @@ alert {
   	</td>
      <td><label>Size</label><!--row 20-->
   <select name="size20" class="size" id="size20" required onChange="price(('size20'), ('boxa20')); stockCnt(('size20'), ('side20'), ('style20'), ('stock20')); customStock(('pam20'), ('stock20'), ('boxb20')); 
-   priceAddtn(('colour20'), ('boxa20')); calculate(('boxa20'), ('boxb20'), ('ltotal20')); setTimeout(calculateSum, 30);">
+   notShow(('size20'), ('style20')); largeSlight(('size20'), ('style20')); priceAddtn(('colour20'), ('boxa20')); calculate(('boxa20'), ('boxb20'), ('ltotal20')); setTimeout(calculateSum, 30);">
   <option ></option>
     <option value="2">2</option>
     <option value="3">3</option>

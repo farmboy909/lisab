@@ -9,3 +9,13 @@ images/*
 includes/*
 javascript/*
 jquery-ui-1.12.1.custom/*
+Layouts/*
+lisab/*
+lisab_pics/*
+lisaboriginals/*
+upload_pics/*
+uplodify/*
+video/*
+*.gif
+*.mp4
+*.db

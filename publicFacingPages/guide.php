@@ -105,6 +105,7 @@ img {
 			<li><a href="../publicFacingPages/dealer.html" style="color:#0091fe;">Become a Dealer</a></li>
             <li><a href="../register/register.php" style="color:#0091fe;">Register</a></li>
 			<li><a href="../publicFacingPages/contact.html" style="color:#0091fe;">Contact Us</a></li>
+            <li><a href="../publicFacingPages/dealer.html" style="color:#0091fe;">Dealers</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../order.php">Dealer Order</a></li>
